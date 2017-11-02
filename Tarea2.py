@@ -70,7 +70,7 @@ def enlarge_graph(nodes, stack, t):
         nodes.append(new)
         stack.append(new)
         return None   
-    print -1
+    print "No se puede crear este grafo"
     exit(1)
     
 def enlarge_graph_cross(nodes, stack, t, root): 
@@ -81,7 +81,7 @@ def enlarge_graph_cross(nodes, stack, t, root):
         nodes.append(new)
         stack.append(new)
         return None   
-    print -1
+    print "No se puede crear este grafo"
     exit(1)
     
 def print_state(message, nodes, stack, t, b, f, c):
@@ -92,10 +92,16 @@ def print_state(message, nodes, stack, t, b, f, c):
 
 
 data_in = raw_input().split()
-t = int(data_in[0])
-b = int(data_in[1])
-f = int(data_in[2])
-c = int(data_in[3])
+while True:
+    try:
+        t = int(data_in[0])
+        b = int(data_in[1])
+        f = int(data_in[2])
+        c = int(data_in[3])
+        break
+    except:
+        print "Input no válido. Pruebe nuevamente..."
+        data_in = raw_input().split()
 initial = True
 nodes=[]
 stack = []
